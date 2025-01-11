@@ -1,0 +1,583 @@
+.home-container {
+  padding: 20px;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.leverage-card {
+  background-color: #242424;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 1200px;
+  max-width: 95%;
+}
+
+.card-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 24px;
+  min-height: 180px;
+  padding: 0;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-section {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title-with-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-with-pair h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.pair-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #888;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.followers-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-badge,
+.currency-badge,
+.leverage-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background-color: #2a2a2a;
+}
+
+.category-badge {
+  color: #888;
+}
+
+.currency-badge {
+  color: #888;
+}
+
+.leverage-badge {
+  color: #00ff00;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.title-section h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.leverage-indicator {
+  background-color: #363636;
+  color: #00ff00;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.trading-pair {
+  margin-bottom: 16px;
+}
+
+.pair-name {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.followers {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.follower-count {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.follower-text {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.features {
+  margin-bottom: 16px;
+}
+
+.feature-tag {
+  background-color: #363636;
+  color: #888;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.currency-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.currency-btn {
+  background: transparent;
+  border: 1px solid #363636;
+  color: #888;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.currency-btn.active {
+  background-color: #363636;
+  color: #ffffff;
+  border-color: #464646;
+}
+
+.currency-btn:hover {
+  border-color: #464646;
+}
+
+/* Middle Section Styles */
+.middle-section {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+
+.roi-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.roi-title::before,
+.roi-title::after {
+  content: '';
+  height: 1px;
+  background-color: #363636;
+  flex: 1;
+}
+
+.roi-text {
+  color: #888;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  background-color: #363636;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stat-item {
+  flex: 1;
+  background-color: #2a2a2a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.stat-separator {
+  color: #363636;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.green {
+  color: #00ff00;
+}
+
+/* Right Section Styles */
+.right-sections-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  flex: 1;
+  padding-left: 0;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.value-section {
+  text-align: right;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.value-groups-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.value-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.value-separator {
+  width: 1px;
+  height: 40px;
+  background-color: #363636;
+  margin: 0;
+}
+
+.current-value {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.percentage-change {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.value-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.chart-container {
+  flex: 1;
+  width: 100%;
+  min-height: 100px;
+}
+
+.follow-section {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  width: 60px;
+}
+
+.follow-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(48, 79, 254);
+  color: white;
+  border-radius: 12px;
+  font-weight: 500;
+  padding: 12px 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  line-height: 150%;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.follow-text {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-orientation: mixed;
+}
+
+.icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  color: transparent;
+}
+
+.vertical-divider {
+  width: 1px;
+  background-color: #363636;
+  align-self: stretch;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .leverage-card {
+    width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-sections {
+    gap: 16px;
+  }
+
+  .left-section,
+  .middle-section,
+  .right-section {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vertical-divider {
+    display: none;
+  }
+
+  .card-sections {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-section {
+    padding: 16px 0;
+    border-bottom: 1px solid #363636;
+  }
+
+  .card-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .right-sections-wrapper {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .follow-section {
+    border-top: 1px solid #363636;
+    padding-top: 16px;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .follow-section {
+    width: 100%;
+    height: 50px;
+  }
+
+  .follow-btn {
+    flex-direction: row;
+    padding: 8px 16px;
+    height: 100%;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .follow-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .icon {
+    position: static;
+    margin-left: 8px;
+  }
+
+  .leverage-card {
+    padding: 16px;
+  }
+
+  .card-sections {
+    flex-direction: column;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stat-content {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .value-section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .value-group {
+    align-items: center;
+  }
+
+  .value-groups-wrapper {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .value-separator {
+    height: 30px;
+  }
+
+  .currency-selector {
+    justify-content: center;
+  }
+
+  .header-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-row {
+    align-items: center;
+  }
+
+  .badge-row {
+    justify-content: center;
+  }
+
+  .right-sections-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .follow-section {
+    padding-top: 0;
+  }
+
+  .follow-btn {
+    font-size: 14px;
+    padding: 0.3rem;
+    width: 45px;
+    height: 60px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .title-with-pair {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .badge-row {
+    gap: 6px;
+  }
+
+  .value-groups-wrapper {
+    gap: 16px;
+  }
+
+  .value-separator {
+    height: 25px;
+  }
+
+  .current-value {
+    font-size: 1.4rem;
+  }
+
+  .percentage-change {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,662 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 75px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 2rem;
+  width: 180px;
+}
+
+.navbar-brand-link {
+  text-decoration: none;
+  color: inherit;
+} 
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 45px;
+  padding: 0 20px;
+}
+
+.button-container a {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  padding: 0 1.2em;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  background: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 
+    -2px -2px 5px #ffffff,
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: fit-content;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+button span,
+button svg path {
+  color: #5D6989;
+  transition: all 0.2s ease;
+}
+
+button.active {
+  background: #e8e8e8;
+  box-shadow: 
+    inset -2px -2px 5px #ffffff,
+    inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button.active span,
+button.active svg path {
+  color: #000000;
+}
+
+button:hover:not(.active) {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+  box-shadow: 
+    -3px -3px 6px #ffffff,
+    3px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+button span {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Sign-in button specific styles */
+.signin-wrapper {
+  position: relative;
+  margin-left: auto;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin-right: 5rem;
+  width: 180px;
+  justify-content: flex-end;
+}
+
+.signin-wrapper::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.signin-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  border: 6px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.signin-wrapper:hover::before,
+.signin-wrapper:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+#signinButton {
+  padding: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#signinButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#signinButton:hover::before {
+  opacity: 1;
+}
+
+#signinButton svg {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+#signinButton:hover svg {
+  transform: scale(1.1);
+}
+
+#signinButton.active {
+  background: #e8e8e8;
+  box-shadow: 
+    inset -2px -2px 5px #ffffff,
+    inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#signinButton.active svg {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1400px) {
+  .button-container {
+    gap: 16px;
+    max-width: 700px;
+  }
+
+  button {
+    padding: 0 1em;
+  }
+
+  .signin-wrapper {
+    margin-right: 3rem;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  
+  .button-container {
+    gap: 12px;
+    max-width: 600px;
+    padding: 0 15px;
+  }
+
+  .navbar-brand {
+    width: 150px;
+  }
+
+  button {
+    padding: 0 0.8em;
+    font-size: 14px;
+  }
+
+  .signin-wrapper {
+    margin-right: 2rem;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-brand {
+    font-size: 24px;
+    width: 130px;
+  }
+
+  .button-container {
+    gap: 8px;
+    max-width: 500px;
+    padding: 0 10px;
+  }
+
+  button {
+    padding: 0 0.7em;
+  }
+
+  .signin-wrapper {
+    margin-right: 1rem;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 65px;
+  }
+
+  .navbar-brand {
+    font-size: 22px;
+    width: auto;
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    background: #f0f0f0;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    gap: 10px;
+    height: 65px;
+  }
+
+  .button-container a {
+    flex: 1;
+    max-width: 120px;
+    min-width: 80px;
+  }
+
+  button {
+    width: 100%;
+    height: 42px;
+    padding: 0 8px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  button span {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .signin-wrapper {
+    position: fixed;
+    top: 12px;
+    right: 1rem;
+    margin: 0;
+    width: auto;
+  }
+
+  .signin-wrapper::before {
+    bottom: auto;
+    top: 55px;
+  }
+
+  .signin-wrapper::after {
+    bottom: auto;
+    top: 43px;
+    border: 6px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+  }
+
+  #signinButton {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 0.75rem;
+    height: 60px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .button-container {
+    padding: 10px 8px;
+    gap: 6px;
+    height: 60px;
+  }
+
+  .button-container a {
+    min-width: 65px;
+    max-width: 90px;
+  }
+
+  button {
+    height: 40px;
+    padding: 0 4px;
+    gap: 2px;
+  }
+
+  button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  button span {
+    font-size: 10px;
+  }
+
+  .signin-wrapper {
+    top: 10px;
+    right: 0.75rem;
+  }
+
+  #signinButton {
+    width: 38px;
+    height: 38px;
+  }
+
+  #signinButton svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .button-container {
+    padding: 8px 6px;
+    gap: 4px;
+  }
+
+  .button-container a {
+    min-width: 60px;
+    max-width: 80px;
+  }
+
+  button {
+    height: 38px;
+  }
+
+  button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  button span {
+    font-size: 9px;
+  }
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 75px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 65px;
+    padding-bottom: 75px; /* Account for bottom navigation */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 60px;
+    padding-bottom: 65px;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  padding: 12px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 
+    -2px -2px 5px #ffffff,
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+}
+
+.hamburger-menu:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+  box-shadow: 
+    -3px -3px 6px #ffffff,
+    3px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu:active {
+  transform: translateY(0);
+  box-shadow: 
+    inset -2px -2px 5px #ffffff,
+    inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: #5D6989;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.hamburger-icon.open span {
+  background-color: #000000;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  width: 100%;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  width: 100%;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .button-container {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  .button-container.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .button-container a {
+    width: 100%;
+    max-width: none;
+  }
+
+  .button-container button {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    padding: 0 20px;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  .button-container button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button-container button span {
+    font-size: 14px;
+  }
+
+  /* Hide the original signin wrapper in mobile view */
+  .signin-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+    margin-right: 0.75rem;
+  }
+
+  .hamburger-icon {
+    width: 16px;
+    height: 12px;
+  }
+
+  .button-container {
+    top: 60px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .button-container button {
+    height: 45px;
+    padding: 0 16px;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .button-container button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .button-container button span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hamburger-menu {
+    width: 36px;
+    height: 36px;
+    padding: 9px;
+    margin-right: 0.75rem;
+  }
+
+  .hamburger-icon {
+    width: 14px;
+    height: 11px;
+  }
+
+  .button-container {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .button-container button {
+    height: 42px;
+    padding: 0 14px;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .button-container button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .button-container button span {
+    font-size: 12px;
+  }
+}
